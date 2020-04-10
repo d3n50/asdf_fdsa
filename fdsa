@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#Autor: Adrian Ledesma Bello
+#Link: https://www.canalhacker.com
+
+ruta=$(echo "\\\"cd "`pwd`\\\" | sed 's/\//\\\//g')
+sed -i '/alias asdf="cd/d' ~/.bashrc
+sed -i 's/# some more ls aliases/# some more ls aliases\nalias asdf='"$ruta"'/g' ~/.bashrc
